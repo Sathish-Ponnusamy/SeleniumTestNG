@@ -1,0 +1,13 @@
+09:08:19.800 [ApplicationImpl pooled thread 700] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:08:19.801 [ApplicationImpl pooled thread 700] INFO  com.browserstack.sdk.utils.Helpers - null
+09:08:19.802 [ApplicationImpl pooled thread 700] INFO  c.b.s.l.BrowserStackRunExtension - Agent path: null
+09:09:25.272 [ApplicationImpl pooled thread 700] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:09:25.273 [ApplicationImpl pooled thread 700] INFO  com.browserstack.sdk.utils.Helpers - null
+09:09:25.274 [ApplicationImpl pooled thread 700] INFO  c.b.s.l.BrowserStackRunExtension - Agent path: null
+09:11:02.012 [AWT-EventQueue-0] INFO  c.b.sdk.actions.DisableBrowserStack - Setting disable browserstack run update
+09:11:02.022 [AWT-EventQueue-0] INFO  c.b.sdk.actions.EnableBrowserStack - Setting enable browserstack run update
+09:11:15.165 [AWT-EventQueue-0] INFO  c.b.sdk.actions.DisableBrowserStack - Setting disable browserstack run update
+09:11:15.173 [AWT-EventQueue-0] INFO  c.b.sdk.actions.EnableBrowserStack - Setting enable browserstack run update
+09:12:33.204 [AWT-EventQueue-0] INFO  c.b.sdk.launchers.LaunchMavenCommand - Integrate source: java:intellij:2.0.0-IC
+09:12:33.204 [AWT-EventQueue-0] INFO  c.b.sdk.launchers.LaunchMavenCommand - Executing maven archetype command - browserstack-sdk-archetype-integrate
+09:12:41.421 [sh] INFO  c.b.sdk.launchers.LaunchMavenCommand - Completed maven archetype command

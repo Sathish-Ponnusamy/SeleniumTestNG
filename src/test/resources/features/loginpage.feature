@@ -19,10 +19,10 @@ Scenario Outline: Unsuccessful login with invalid or empty credentials
 
   Examples:
     | username  | password  | error_message                                         |
-    | sathish   | sathish   | Warning: No match for E-Mail Address and/or Password. |
+    | sathish1  | sathish1  | Warning: No match for E-Mail Address and/or Password. |
     | ponnusamy | ponnusamy | Warning: No match for E-Mail Address and/or Password. |
 
   Scenario: Navigating to the forgotten password page
    When I click on the "Forgotten Password" link
-#   Then I should be redirected to the password reset page
+   Then I should be redirected to the password reset page
 

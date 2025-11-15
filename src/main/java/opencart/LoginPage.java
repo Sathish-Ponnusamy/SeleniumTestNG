@@ -6,11 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import static java.sql.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class LoginPage {
     private final Thread thread = new Thread();
-    private WebDriver driver;
+    private static WebDriver driver;
 
     //Locators
     private By emailInputLocator = By.id("input-email");
@@ -19,22 +22,40 @@ public class LoginPage {
     private By forgottenPasswordLinkLocator = By.linkText("Forgotten Password");
 //    private By LogoutLinkLocator = By.linkText("Logout");
 //*[@id="content"]/div/div[2]/div/form/input
-    private By LogoutLinkLocator = By.xpath("//*[@id=\"column-right\"]/div/a[13]");
+//    private By LogoutLinkLocator = By.xpath("//*[@id=\"column-right\"]/div/a[13]");
+    private By LogoutLinkLocator = By.cssSelector("#column-right > div > a:nth-child(13)");
 
     //constructor
     public LoginPage(WebDriver driver) throws InterruptedException {
         this.driver=driver;
-//        driver.manage().timeouts().pageLoadTimeout(100,SECONDS);
-        thread.sleep(5000);
+        driver.manage().window().maximize();
+        Timeouts();
     }
+
+
+    public static void Timeouts() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
+    }
+
+    public static void WaitElement(WebElement webElement) {
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(100));
+        WebElement element=wait.until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+//    private static Object getDriver() {
+//        return null;
+//    }
 
     //Methods
     public void enterEmail(String email){
+//        Timeouts();
+//        WaitElement((WebElement) emailInputLocator);
         WebElement emailInput = driver.findElement(emailInputLocator);
         emailInput.sendKeys(email);
     }
 
     public void enterPassword(String password) {
+//        WaitElement((WebElement) passwordInputLocator);
         WebElement passwordInput = driver.findElement(passwordInputLocator);
         passwordInput.sendKeys(password);
     }
@@ -65,7 +86,7 @@ public class LoginPage {
 
     public String getForgotPwdPageURL(){
         String forgotPwdPageUrl = driver.getCurrentUrl();
-        return getForgotPwdPageURL();
+        return forgotPwdPageUrl;
     }
 
 }
