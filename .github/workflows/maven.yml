@@ -29,20 +29,23 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Selenium TestNG WebAPI Tests
     - run: mvn clean test
+
+    - name: Selenium TestNG API Tests
+    - run: mvn clean test -DTest="apiAutomation"
+
     - name: Test Artefact Upload
       uses: actions/upload-artifact@v4
       with:
         name: TestReport
         path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/**
+
           # ⬇️ Upload cucumber report artifact
     - name: Upload Cucumber Report
       uses: actions/upload-artifact@v4
       with:
           name: cucumber-report
           path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/target/**
-          retention-days: 7    
-        
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    # - name: Update dependency graph
-    # uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+          retention-days: 7

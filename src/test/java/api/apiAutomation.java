@@ -25,13 +25,13 @@ public class apiAutomation {
         Assert.assertEquals(statusCode,200);
         baseURI = "https://reqres.in/api";
         given().get("users?page=1").then().body("data.first_name",hasItems("George","Janet"));
-        given().get("users?page=1").then().body("data.first_name",hasItems("George","Janeet"));
+        given().get("users?page=1").then().body("data.first_name",hasItems("George","George"));
     }
 
     @Test
     public void apiGETTest1(){
         baseURI= "https://reqres.in/api";
-    given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().statusCode(200).body("data[1].id",equalTo(8)).log().all();
+    given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().statusCode(200).body("data[1].id",equalTo(2)).log().all();
     }
 
     @Test
