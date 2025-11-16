@@ -7,6 +7,6 @@
 > Cross browser - <B> Done </B> <BR>
 > Accessibility using AXE libraries - <B> yet to do </B> <BR>
 > API Automation - <B> Done </B> <BR>
-> Jenkins Pipeline configuration - <B> yet to do </B> <BR>
+> GitHub Pipeline configuration + Test Artefacts- <B> Done </B> <BR>
 > Azure DevOps Pipeline configuration - <B> yet to do </B> <BR>
 > BrowserStack configuration - <B> Done </B> <BR>
