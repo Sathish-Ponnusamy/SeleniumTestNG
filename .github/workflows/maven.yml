@@ -30,11 +30,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - run: mvn clean test
-    - name: upload site content
+    - name: Test Artefact Upload
       uses: actions/upload-artifact@v4
       with:
-        name: static-site
-        path: SeleniumTestNG/
+        name: TestReport
+        path: SeleniumTestNG/SeleniumTestNG/target/surefire-reports
+        
         
       
 
