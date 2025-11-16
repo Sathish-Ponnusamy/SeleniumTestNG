@@ -34,13 +34,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: TestReport
-        path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/src/test/java/api/apiAutomation.java
+        path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/**
           # ⬇️ Upload cucumber report artifact
     - name: Upload Cucumber Report
       uses: actions/upload-artifact@v4
       with:
           name: cucumber-report
-          path: reports/**
+          path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/target/**
           retention-days: 7    
         
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
