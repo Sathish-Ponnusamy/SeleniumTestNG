@@ -58,7 +58,7 @@ source: java:intellij:2.0.0-IC
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
+browserstackLocal: true # <boolean> (Default true)
 
 # Options to be passed to BrowserStack local in-case of advanced configurations
 # browserStackLocalOptions:
@@ -66,7 +66,7 @@ browserstackLocal: true # <boolean> (Default false)
   # forceLocal: true  # <boolean> (Default: false) Set to true if you need to resolve all your traffic via BrowserStack Local tunnel.
   # skipBinaryInitialisation: true # <boolean> (Default: false) Set to true if you need to skip the Local Binary initialisation through SDK.
   # Entire list of arguments available here -> https://www.browserstack.com/docs/automate/selenium/manage-incoming-connections
-  
+
 # ===================
 # Debugging features
 # ===================

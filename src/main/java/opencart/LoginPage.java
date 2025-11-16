@@ -48,7 +48,7 @@ public class LoginPage {
 
     //Methods
     public void enterEmail(String email){
-//        Timeouts();
+        Timeouts();
 //        WaitElement((WebElement) emailInputLocator);
         WebElement emailInput = driver.findElement(emailInputLocator);
         emailInput.sendKeys(email);

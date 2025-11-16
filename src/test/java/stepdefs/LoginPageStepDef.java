@@ -1,5 +1,9 @@
 package stepdefs;
 
+//import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.Status;
+//import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -22,6 +26,12 @@ public class LoginPageStepDef {
     private WebDriver driver;
     private LoginPage loginPage;
 
+//    ExtentReports reports = new ExtentReports();
+//
+//    // fluent
+//    ExtentReports extent = new ExtentReports();
+//    ExtentTest test = extent.createTest("MyFirstTest").createNode("Node").pass("Pass");
+//    ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
 
     @Before
     public void setup(){
