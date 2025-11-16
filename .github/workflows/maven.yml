@@ -29,11 +29,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-    - name: Selenium TestNG WebAPI Tests
     - run: mvn clean test
-
-    - name: Selenium TestNG API Tests
     - run: mvn clean test -DTest="apiAutomation"
 
     - name: Test Artefact Upload
