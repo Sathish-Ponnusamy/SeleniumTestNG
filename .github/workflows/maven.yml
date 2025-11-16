@@ -34,7 +34,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: TestReport
-        path: SeleniumTestNG/SeleniumTestNG/target/cucumber-reports.html
+        path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/src/test/java/api/apiAutomation.java
           # ⬇️ Upload cucumber report artifact
     - name: Upload Cucumber Report
       uses: actions/upload-artifact@v4
