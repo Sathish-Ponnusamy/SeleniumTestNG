@@ -31,7 +31,7 @@ public class apiAutomation {
     @Test
     public void apiGETTest1(){
         baseURI= "https://reqres.in/api";
-    given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().statusCode(401).body("data[1].id",equalTo(2)).log().all();
+    given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().statusCode(200).body("data[1].id",equalTo(2)).log().all();
     }
 
     @Test
