@@ -32,6 +32,9 @@ jobs:
 #    - run: mvn clean test
 #    - run: mvn clean test -DTest="apiAutomation"
 
+    - name: Run API test only
+      run: mvn clean test -Dtest=apiAutomation -DexcludeTests=RunCucumberTest
+
     - name: Test Artefact Upload
       uses: actions/upload-artifact@v4
       with:
