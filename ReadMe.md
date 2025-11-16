@@ -1,7 +1,7 @@
 # Selenium Java Cucumber BDD TestNG Framework
 
-> Page Object Model - Done <BR>
->  Cucumber HTML Report - Done <BR>
+> Page Object Model - <B> Done </B> <BR>
+>  Cucumber HTML Report - <B> Done </B> <BR>
 > Configuration file - <B> yet to do </B> <BR>
 > Extent HTML Reporting - <B> yet to do </B> <BR>
 > Cross browser - <B> Done </B> <BR>
