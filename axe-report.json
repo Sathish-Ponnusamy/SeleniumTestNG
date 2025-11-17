@@ -1,0 +1,172 @@
+[ {
+  "impact" : "critical",
+  "issue" : "Ensure buttons have discernible text",
+  "help" : "Buttons must have discernible text",
+  "id" : "button-name",
+  "nodes" : [ {
+    "html" : "<button type=\"button\" class=\"btn btn-default btn-lg\"><i class=\"fa fa-search\"></i></button>",
+    "target" : "[.btn-default]"
+  } ],
+  "tags" : [ "cat.name-role-value", "wcag2a", "wcag412", "section508", "section508.22.a", "TTv5", "TT6.a", "EN-301-549", "EN-9.4.1.2", "ACT", "RGAAv4", "RGAA-11.9.1" ]
+}, {
+  "impact" : "serious",
+  "issue" : "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+  "help" : "Elements must meet minimum color contrast ratio thresholds",
+  "id" : "color-contrast",
+  "nodes" : [ {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">Currency</span>",
+    "target" : "[.btn-link > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">123456789</span>",
+    "target" : "[li:nth-child(1) > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">My Account</span>",
+    "target" : "[a[title=\"My Account\"] > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">Wish List (0)</span>",
+    "target" : "[#wishlist-total > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">Shopping Cart</span>",
+    "target" : "[a[title=\"Shopping Cart\"] > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<span class=\"hidden-xs hidden-sm hidden-md\">Checkout</span>",
+    "target" : "[a[title=\"Checkout\"] > .hidden-sm.hidden-md.hidden-xs]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/account\">Account</a>",
+    "target" : "[.breadcrumb > li:nth-child(2) > a]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/login\">Login</a>",
+    "target" : "[.breadcrumb > li:nth-child(3) > a]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/forgotten\">Forgotten Password</a>",
+    "target" : "[.form-group:nth-child(2) > a]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/login\" class=\"list-group-item\">Login</a>",
+    "target" : "[.list-group-item:nth-child(1)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/register\" class=\"list-group-item\">Register</a>",
+    "target" : "[.list-group-item:nth-child(2)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/forgotten\" class=\"list-group-item\">Forgotten Password</a>",
+    "target" : "[.list-group-item:nth-child(3)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/account\" class=\"list-group-item\">My Account</a>",
+    "target" : "[.list-group-item:nth-child(4)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/address\" class=\"list-group-item\">Address Book</a>",
+    "target" : "[.list-group-item:nth-child(5)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/wishlist\" class=\"list-group-item\">Wish List</a>",
+    "target" : "[.list-group-item:nth-child(6)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/order\" class=\"list-group-item\">Order History</a>",
+    "target" : "[.list-group-item:nth-child(7)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/download\" class=\"list-group-item\">Downloads</a>",
+    "target" : "[.list-group-item:nth-child(8)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/recurring\" class=\"list-group-item\">Recurring payments</a>",
+    "target" : "[.list-group-item:nth-child(9)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/reward\" class=\"list-group-item\">Reward Points</a>",
+    "target" : "[.list-group-item:nth-child(10)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/return\" class=\"list-group-item\">Returns</a>",
+    "target" : "[.list-group-item:nth-child(11)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/transaction\" class=\"list-group-item\">Transactions</a>",
+    "target" : "[.list-group-item:nth-child(12)]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=account/newsletter\" class=\"list-group-item\">Newsletter</a>",
+    "target" : "[.list-group-item:nth-child(13)]"
+  } ],
+  "tags" : [ "cat.color", "wcag2aa", "wcag143", "TTv5", "TT13.c", "EN-301-549", "EN-9.1.4.3", "ACT", "RGAAv4", "RGAA-3.2.1" ]
+}, {
+  "impact" : "moderate",
+  "issue" : "Ensure the order of headings is semantically correct",
+  "help" : "Heading levels should only increase by one",
+  "id" : "heading-order",
+  "nodes" : [ {
+    "html" : "<h5>Information</h5>",
+    "target" : "[.col-sm-3:nth-child(1) > h5]"
+  } ],
+  "tags" : [ "cat.semantics", "best-practice" ]
+}, {
+  "impact" : "moderate",
+  "issue" : "Ensure the document has a main landmark",
+  "help" : "Document should have one main landmark",
+  "id" : "landmark-one-main",
+  "nodes" : [ {
+    "html" : "<html dir=\"ltr\" lang=\"en\">",
+    "target" : "[html]"
+  } ],
+  "tags" : [ "cat.semantics", "best-practice" ]
+}, {
+  "impact" : "moderate",
+  "issue" : "Ensure landmarks are unique",
+  "help" : "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+  "id" : "landmark-unique",
+  "nodes" : [ {
+    "html" : "<nav id=\"top\">",
+    "target" : "[#top]"
+  } ],
+  "tags" : [ "cat.semantics", "best-practice" ]
+}, {
+  "impact" : "serious",
+  "issue" : "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+  "help" : "Links must be distinguishable without relying on color",
+  "id" : "link-in-text-block",
+  "nodes" : [ {
+    "html" : "<a href=\"http://www.opencart.com\">OpenCart</a>",
+    "target" : "[a[href$=\"www.opencart.com\"]]"
+  } ],
+  "tags" : [ "cat.color", "wcag2a", "wcag141", "TTv5", "TT13.a", "EN-301-549", "EN-9.1.4.1", "RGAAv4", "RGAA-10.6.1" ]
+}, {
+  "impact" : "serious",
+  "issue" : "Ensure links have discernible text",
+  "help" : "Links must have discernible text",
+  "id" : "link-name",
+  "nodes" : [ {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=information/contact\"><i class=\"fa fa-phone\"></i></a>",
+    "target" : "[.list-inline > li:nth-child(1) > a]"
+  }, {
+    "html" : "<a href=\"https://naveenautomationlabs.com/opencart/index.php?route=common/home\"><i class=\"fa fa-home\"></i></a>",
+    "target" : "[.breadcrumb > li:nth-child(1) > a]"
+  } ],
+  "tags" : [ "cat.name-role-value", "wcag2a", "wcag244", "wcag412", "section508", "section508.22.a", "TTv5", "TT6.a", "EN-301-549", "EN-9.2.4.4", "EN-9.4.1.2", "ACT", "RGAAv4", "RGAA-6.2.1" ]
+}, {
+  "impact" : "moderate",
+  "issue" : "Ensure that the page, or at least one of its frames contains a level-one heading",
+  "help" : "Page should contain a level-one heading",
+  "id" : "page-has-heading-one",
+  "nodes" : [ {
+    "html" : "<html dir=\"ltr\" lang=\"en\">",
+    "target" : "[html]"
+  } ],
+  "tags" : [ "cat.semantics", "best-practice" ]
+}, {
+  "impact" : "moderate",
+  "issue" : "Ensure all page content is contained by landmarks",
+  "help" : "All page content should be contained by landmarks",
+  "id" : "region",
+  "nodes" : [ {
+    "html" : "<ul class=\"breadcrumb\">",
+    "target" : "[.breadcrumb]"
+  }, {
+    "html" : "<div class=\"col-sm-6\">",
+    "target" : "[.col-sm-6:nth-child(1)]"
+  }, {
+    "html" : "<h2>Returning Customer</h2>",
+    "target" : "[.col-sm-6:nth-child(2) > .well > h2]"
+  }, {
+    "html" : "<p><strong>I am a returning customer</strong></p>",
+    "target" : "[.col-sm-6:nth-child(2) > .well > p]"
+  }, {
+    "html" : "<div class=\"form-group\">\n                <label class=\"control-label\" for=\"input-email\">E-Mail Address</label>\n                <input type=\"text\" name=\"email\" value=\"\" placeholder=\"E-Mail Address\" id=\"input-email\" class=\"form-control\">\n              </div>",
+    "target" : "[.form-group:nth-child(1)]"
+  }, {
+    "html" : "<div class=\"form-group\">",
+    "target" : "[.form-group:nth-child(2)]"
+  } ],
+  "tags" : [ "cat.keyboard", "best-practice", "RGAAv4", "RGAA-9.2.1" ]
+} ]

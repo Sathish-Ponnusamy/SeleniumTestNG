@@ -1,0 +1,36 @@
+Impact: critical
+Issue: Ensure buttons have discernible text
+Help: Buttons must have discernible text
+
+Impact: serious
+Issue: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds
+Help: Elements must meet minimum color contrast ratio thresholds
+
+Impact: moderate
+Issue: Ensure the order of headings is semantically correct
+Help: Heading levels should only increase by one
+
+Impact: moderate
+Issue: Ensure the document has a main landmark
+Help: Document should have one main landmark
+
+Impact: moderate
+Issue: Ensure landmarks are unique
+Help: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination
+
+Impact: serious
+Issue: Ensure links are distinguished from surrounding text in a way that does not rely on color
+Help: Links must be distinguishable without relying on color
+
+Impact: serious
+Issue: Ensure links have discernible text
+Help: Links must have discernible text
+
+Impact: moderate
+Issue: Ensure that the page, or at least one of its frames contains a level-one heading
+Help: Page should contain a level-one heading
+
+Impact: moderate
+Issue: Ensure all page content is contained by landmarks
+Help: All page content should be contained by landmarks
+

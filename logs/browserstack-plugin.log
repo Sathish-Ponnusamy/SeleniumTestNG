@@ -155,3 +155,79 @@
 11:24:47.738 [AWT-EventQueue-0] INFO  c.b.sdk.actions.EnableBrowserStack - Setting enable browserstack run update
 11:30:52.576 [ApplicationImpl pooled thread 403] INFO  c.b.s.l.BrowserStackRunExtension - testng
 11:30:52.577 [ApplicationImpl pooled thread 403] INFO  com.browserstack.sdk.utils.Helpers - false
+21:05:34.952 [ApplicationImpl pooled thread 672] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:05:34.952 [ApplicationImpl pooled thread 672] INFO  com.browserstack.sdk.utils.Helpers - false
+21:05:43.874 [ApplicationImpl pooled thread 673] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:05:43.874 [ApplicationImpl pooled thread 673] INFO  com.browserstack.sdk.utils.Helpers - false
+21:08:55.140 [ApplicationImpl pooled thread 672] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:08:55.140 [ApplicationImpl pooled thread 672] INFO  com.browserstack.sdk.utils.Helpers - false
+21:32:34.790 [ApplicationImpl pooled thread 697] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:32:34.790 [ApplicationImpl pooled thread 697] INFO  com.browserstack.sdk.utils.Helpers - false
+21:35:06.038 [ApplicationImpl pooled thread 692] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:35:06.039 [ApplicationImpl pooled thread 692] INFO  com.browserstack.sdk.utils.Helpers - false
+21:35:52.390 [ApplicationImpl pooled thread 700] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:35:52.390 [ApplicationImpl pooled thread 700] INFO  com.browserstack.sdk.utils.Helpers - false
+21:38:45.672 [ApplicationImpl pooled thread 692] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:38:45.672 [ApplicationImpl pooled thread 692] INFO  com.browserstack.sdk.utils.Helpers - false
+21:39:21.158 [ApplicationImpl pooled thread 692] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:39:21.158 [ApplicationImpl pooled thread 692] INFO  com.browserstack.sdk.utils.Helpers - false
+21:40:11.161 [ApplicationImpl pooled thread 703] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:40:11.161 [ApplicationImpl pooled thread 703] INFO  com.browserstack.sdk.utils.Helpers - false
+21:42:27.143 [ApplicationImpl pooled thread 692] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:42:27.143 [ApplicationImpl pooled thread 692] INFO  com.browserstack.sdk.utils.Helpers - false
+21:43:06.668 [ApplicationImpl pooled thread 708] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:43:06.669 [ApplicationImpl pooled thread 708] INFO  com.browserstack.sdk.utils.Helpers - false
+21:44:47.438 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:44:47.438 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:46:29.174 [ApplicationImpl pooled thread 711] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:46:29.175 [ApplicationImpl pooled thread 711] INFO  com.browserstack.sdk.utils.Helpers - false
+21:46:53.442 [ApplicationImpl pooled thread 711] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:46:53.442 [ApplicationImpl pooled thread 711] INFO  com.browserstack.sdk.utils.Helpers - false
+21:47:50.844 [ApplicationImpl pooled thread 709] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:47:50.845 [ApplicationImpl pooled thread 709] INFO  com.browserstack.sdk.utils.Helpers - false
+21:47:56.864 [ApplicationImpl pooled thread 709] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:47:56.864 [ApplicationImpl pooled thread 709] INFO  com.browserstack.sdk.utils.Helpers - false
+21:48:36.362 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:48:36.362 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:49:09.748 [ApplicationImpl pooled thread 711] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:49:09.748 [ApplicationImpl pooled thread 711] INFO  com.browserstack.sdk.utils.Helpers - false
+21:52:30.795 [ApplicationImpl pooled thread 709] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:52:30.795 [ApplicationImpl pooled thread 709] INFO  com.browserstack.sdk.utils.Helpers - false
+21:52:55.758 [ApplicationImpl pooled thread 709] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:52:55.758 [ApplicationImpl pooled thread 709] INFO  com.browserstack.sdk.utils.Helpers - false
+21:53:03.820 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:53:03.820 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:53:12.242 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:53:12.243 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:53:21.431 [ApplicationImpl pooled thread 709] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:53:21.431 [ApplicationImpl pooled thread 709] INFO  com.browserstack.sdk.utils.Helpers - false
+21:53:27.694 [ApplicationImpl pooled thread 713] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:53:27.694 [ApplicationImpl pooled thread 713] INFO  com.browserstack.sdk.utils.Helpers - false
+21:53:35.989 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:53:35.989 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:55:06.417 [ApplicationImpl pooled thread 704] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:55:06.417 [ApplicationImpl pooled thread 704] INFO  com.browserstack.sdk.utils.Helpers - false
+21:56:54.743 [ApplicationImpl pooled thread 718] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:56:54.743 [ApplicationImpl pooled thread 718] INFO  com.browserstack.sdk.utils.Helpers - false
+21:58:35.790 [ApplicationImpl pooled thread 718] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+21:58:35.790 [ApplicationImpl pooled thread 718] INFO  com.browserstack.sdk.utils.Helpers - false
+22:01:10.772 [ApplicationImpl pooled thread 722] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+22:01:10.772 [ApplicationImpl pooled thread 722] INFO  com.browserstack.sdk.utils.Helpers - false
+22:08:53.245 [ApplicationImpl pooled thread 728] INFO  c.b.s.l.BrowserStackRunExtension - cucumber java
+22:08:53.245 [ApplicationImpl pooled thread 728] INFO  com.browserstack.sdk.utils.Helpers - false
+09:26:10.907 [ApplicationImpl pooled thread 757] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:26:10.907 [ApplicationImpl pooled thread 757] INFO  com.browserstack.sdk.utils.Helpers - false
+09:27:45.753 [ApplicationImpl pooled thread 763] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:27:45.753 [ApplicationImpl pooled thread 763] INFO  com.browserstack.sdk.utils.Helpers - false
+09:44:55.807 [ApplicationImpl pooled thread 779] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:44:55.807 [ApplicationImpl pooled thread 779] INFO  com.browserstack.sdk.utils.Helpers - false
+09:51:38.697 [ApplicationImpl pooled thread 771] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:51:38.697 [ApplicationImpl pooled thread 771] INFO  com.browserstack.sdk.utils.Helpers - false
+09:55:29.645 [ApplicationImpl pooled thread 786] INFO  c.b.s.l.BrowserStackRunExtension - testng
+09:55:29.645 [ApplicationImpl pooled thread 786] INFO  com.browserstack.sdk.utils.Helpers - false
+10:07:29.803 [ApplicationImpl pooled thread 804] INFO  c.b.s.l.BrowserStackRunExtension - testng
+10:07:29.803 [ApplicationImpl pooled thread 804] INFO  com.browserstack.sdk.utils.Helpers - false
+10:14:42.653 [ApplicationImpl pooled thread 810] INFO  c.b.s.l.BrowserStackRunExtension - testng
+10:14:42.653 [ApplicationImpl pooled thread 810] INFO  com.browserstack.sdk.utils.Helpers - false
+10:56:48.933 [ApplicationImpl pooled thread 824] INFO  c.b.s.l.BrowserStackRunExtension - testng
+10:56:48.933 [ApplicationImpl pooled thread 824] INFO  com.browserstack.sdk.utils.Helpers - false

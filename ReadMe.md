@@ -5,7 +5,7 @@
 > Configuration file - <B> yet to do </B> <BR>
 > Extent HTML Reporting - <B> yet to do </B> <BR>
 > Cross browser - <B> Done </B> <BR>
-> Accessibility using AXE libraries - <B> yet to do </B> <BR>
+> Accessibility using AXE libraries - <B> Done </B> <BR>
 > API Automation - <B> Done </B> <BR>
 > GitHub Pipeline configuration + Test Artefacts- <B> Done </B> <BR>
 > Azure DevOps Pipeline configuration - <B> yet to do </B> <BR>
