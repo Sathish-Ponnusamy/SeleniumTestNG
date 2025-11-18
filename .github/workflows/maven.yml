@@ -38,7 +38,7 @@ jobs:
         # 1. Run your Maven command that generates the report (e.g., test execution).
         # You may need to replace 'mvn clean test...' with the specific command 
         # that ALSO triggers the cucumber report publishing.
-        REPORT_OUTPUT=$(mvn clean test -Dtest=apiAutomation | tee /dev/stderr)
+        REPORT_OUTPUT=$(mvn clean test | tee /dev/stderr)
         
         # 2. Extract the dynamic URL from the command output.
         # This command searches the output for the specific URL pattern and takes the last one.
