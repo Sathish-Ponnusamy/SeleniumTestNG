@@ -31,7 +31,55 @@ jobs:
     # NOTE: Build and WebUI Testing - Selenium Cucumber BDD Tests        
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    
+      
+    - name: Run Tests, Publish Report, & Capture URL 🎣
+      id: publish_report1
+      run: |
+        # 1. Run your Maven command that generates the report (e.g., test execution).
+        # You may need to replace 'mvn clean test...' with the specific command 
+        # that ALSO triggers the cucumber report publishing.
+        REPORT_OUTPUT=$(mvn clean test -Dtest=apiAutomation | tee /dev/stderr)
+        
+        # 2. Extract the dynamic URL from the command output.
+        # This command searches the output for the specific URL pattern and takes the last one.
+        REPORT_URL=$(echo "$REPORT_OUTPUT" | grep 'https://reports.cucumber.io/reports/' | tail -n 1)
+        
+        # 3. Check if the URL was found and make it available as a step output.
+        if [ -z "$REPORT_URL" ]; then
+          echo "WARNING: Cucumber live report URL was not found in the output."
+          # Set a default/empty value if not found
+          echo "report_url=" >> "$GITHUB_OUTPUT"
+        else
+          echo "Captured URL: $REPORT_URL"
+          # Set the captured URL as an output variable for the next step
+          echo "report_url=$REPORT_URL" >> "$GITHUB_OUTPUT"
+        fi
+      # Continue even if the test or publishing command fails, so we can capture the output
+      if: always()    
+
+    - name: Display Live Report Link in Summary 📄
+      uses: actions/github-script@v7
+      with:
+        script: |
+          // Retrieve the URL captured in the previous step's output
+          const reportUrl = process.env.REPORT_URL;
+          
+          if (reportUrl) {
+            core.summary.addHeading('Cucumber Live Report Link 🔗', 2)
+              .addRaw('The interactive external report for this run is available:')
+              // Use addLink to create a clickable URL in the summary
+              .addLink('View Dynamic Cucumber Report', reportUrl)
+              .write();
+          } else {
+            core.summary.addRaw('⚠️ **Cucumber Report Publishing Failed:** Could not find the dynamic report URL. Check the previous step logs.')
+              .write();
+          }
+      env:
+        # Pass the captured URL from Step 1's output to this script
+        REPORT_URL: ${{ steps.publish_report1.outputs.report_url }}
+      # Ensure this runs to update the summary, even if the report wasn't generated
+      if: always()
+      
     # NOTE: 'mvn clean test' runs the test goal, which also does the package goal implicitly.
     - name: Run API test only
       # This step generates the reports in the 'target' directory.
