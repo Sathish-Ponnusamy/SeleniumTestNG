@@ -48,7 +48,11 @@ jobs:
           name: cucumber-report
           path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/target/**
           retention-days: 7
-# 3. Upload the Extent Report Artifact
+          
+    - name: Verify Report Files Exist
+      run: ls -R target/
+  
+# Upload the Extent Report Artifact
     - name: Upload Extent Reports
       uses: actions/upload-artifact@v4
       with:
