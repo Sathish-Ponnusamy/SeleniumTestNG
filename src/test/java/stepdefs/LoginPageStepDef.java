@@ -4,6 +4,8 @@ package stepdefs;
 //import com.aventstack.extentreports.ExtentTest;
 //import com.aventstack.extentreports.Status;
 //import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.deque.html.axecore.results.Node;
 import com.deque.html.axecore.results.Results;
 import com.deque.html.axecore.results.Rule;
@@ -22,7 +24,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import utils.ConfigFileReader;
+import utils.extentReport;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -37,9 +42,13 @@ public class LoginPageStepDef {
     //    ExtentReports reports = new ExtentReports();
 //
 //    // fluent
-//    ExtentReports extent = new ExtentReports();
+    ExtentReports extent1 = new ExtentReports();
 //    ExtentTest test = extent.createTest("MyFirstTest").createNode("Node").pass("Pass");
 //    ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
+
+    ConfigFileReader cfr = new ConfigFileReader();
+    final File CONF = new File(cfr.getReportConfigPath());
+    ExtentSparkReporter spark = new ExtentSparkReporter(cfr.getReportOutPath());
 
     @Before
     public void setup(){
@@ -65,6 +74,9 @@ public class LoginPageStepDef {
     @Given("I have entered a valid username and password")
     public void i_have_entered_a_valid_username_and_password() throws InterruptedException, IOException {
 
+        extentReport er = new extentReport();
+        er.extRepInst(spark, extent1, "WebUI Testing - Sample","Authentication Test");
+        er.extRepTer(spark, extent1);
         // Accessibility testing using AXE Libraries
 
         Results axeResults = axeBuilder.analyze(driver);
