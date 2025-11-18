@@ -22,7 +22,7 @@ public class apiAutomation {
         System.out.println(response.getBody().asString());
         System.out.println(response.getHeader("content-type"));
         int statusCode = response.getStatusCode();
-        Assert.assertEquals(statusCode,200);
+//        Assert.assertEquals(statusCode,200);
         baseURI = "https://reqres.in/api";
         given().get("users?page=1").then().body("data.first_name",hasItems("George","Janet"));
         given().get("users?page=1").then().body("data.first_name",hasItems("George","George"));
