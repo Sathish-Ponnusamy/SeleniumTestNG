@@ -72,7 +72,7 @@ jobs:
         name: surefire-report
         # Using a relative path is safer in GitHub Actions
         path: 
-          target/surefire-reports/**/*
-          target/surefire-reports/* # Assuming the reports are in this directory
+          # target/surefire-reports/**/*
+          target/surefire-reports/Surefire suite/Surefire test.html # Assuming the reports are in this directory
         retention-days: 7
       if: always()      
