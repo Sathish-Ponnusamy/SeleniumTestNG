@@ -40,6 +40,17 @@ jobs:
       run: ls -R target/
       # Using 'if: always()' here helps see if the file was generated even on failure
       if: always()
+      
+    - name: Verify Target Directory Contents 🔍
+      # Use the 'find' command to recursively search for the file, 
+      # starting from the project root (where the target folder is).
+      # Run this step even if the tests fail.
+      run: |
+        echo "Searching for spark.html in the project directory..."
+        find . -name "spark.html" || true
+        echo "Listing contents of target directory:"
+        ls -R target/ || true
+      if: always()
 
     # ⬇️ Upload the Extent Report Artifact
     - name: Upload Extent Reports (spark.html) 🚀
@@ -75,4 +86,5 @@ jobs:
           # target/surefire-reports/**/*
           target/surefire-reports/Surefire suite/Surefire test.html # Assuming the reports are in this directory
         retention-days: 7
-      if: always()      
+      if: always()
+      
