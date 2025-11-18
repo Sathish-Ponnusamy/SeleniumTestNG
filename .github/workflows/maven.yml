@@ -48,3 +48,23 @@ jobs:
           name: cucumber-report
           path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/target/**
           retention-days: 7
+# 3. Upload the Extent Report Artifact
+    - name: Upload Extent Reports
+      uses: actions/upload-artifact@v4
+      with:
+          # This is the name the artifact will have in the GitHub UI
+          name: Extent-HTML-Report
+          
+          # This is the path to the directory containing your report file(s).
+          # Use a path that includes all necessary assets (JS, CSS, images) 
+          # which are usually in the directory alongside index.html.
+          path: |
+            target/ExtentReports/ # Adjust this path to your actual report directory
+            target/ExtentReports/**/* # Include all files recursively
+            
+          # (Optional) Define how long the artifact should be retained (in days). Max 90 days.
+          retention-days: 30 
+          
+      # 4. Optional: Run this step even if tests fail
+      # This ensures you get the report for debugging failures.
+      if: always()          
