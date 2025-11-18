@@ -27,6 +27,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+
+    # NOTE: Build and WebUI Testing - Selenium Cucumber BDD Tests        
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
     
     # NOTE: 'mvn clean test' runs the test goal, which also does the package goal implicitly.
     - name: Run API test only
