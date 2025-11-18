@@ -2,8 +2,8 @@
 
 > Page Object Model - <B> Done </B> <BR>
 >  Cucumber HTML Report - <B> Done </B> <BR>
-> Configuration file - <B> yet to do </B> <BR>
-> Extent HTML Reporting - <B> yet to do </B> <BR>
+> Configuration file - <B> Done </B> <BR>
+> Extent HTML Reporting - <B> Done </B> <BR>
 > Cross browser - <B> Done </B> <BR>
 > Accessibility using AXE libraries - <B> Done </B> <BR>
 > API Automation - <B> Done </B> <BR>
