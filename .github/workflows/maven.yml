@@ -36,15 +36,7 @@ jobs:
     - name: Run API test only
       # This step generates the reports in the 'target' directory.
       run: mvn clean test -Dtest=apiAutomation -DexcludeTests=RunCucumberTest
-
-    # --- Verification & Upload Steps ---
-    
-    # ⬇️ Verify Report Files Exist (Helpful for debugging the path)
-    - name: Verify Target Directory Contents
-      run: ls -R target/
-      # Using 'if: always()' here helps see if the file was generated even on failure
-      if: always()
-      
+   
     - name: Verify Target Directory Contents 🔍
       # Use the 'find' command to recursively search for the file, 
       # starting from the project root (where the target folder is).
@@ -92,3 +84,20 @@ jobs:
         retention-days: 7
       if: always()
       
+    - name: Publish Report & Write URL to File 📝
+      id: publish_report
+      run: |
+        # Capture the dynamic URL (adjust grep/tail command as needed)
+        REPORT_URL=$(mvn cucumber-reporting:publish | grep 'https://reports.cucumber.io/reports/' | tail -n 1)
+        
+        # Write the URL to a text file in the target directory
+        echo "$REPORT_URL" > target/cucumber_live_report_link.html
+      if: always()      
+
+    - name: Upload Report Link Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Cucumber-Live-Link
+        path: target/cucumber_live_report_link.html
+        retention-days: 7
+      if: always()
