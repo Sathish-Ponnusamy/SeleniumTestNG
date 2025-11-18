@@ -1,4 +1,4 @@
-//package stepdefs;
+//package opencart;
 //
 ////import com.aventstack.extentreports.ExtentReports;
 ////import com.aventstack.extentreports.ExtentTest;
@@ -16,22 +16,16 @@
 //import io.cucumber.java.en.Given;
 //import io.cucumber.java.en.Then;
 //import io.cucumber.java.en.When;
-//import opencart.Base;
-//import opencart.LoginPage;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.Assert;
 //
-//import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
 //import java.io.IOException;
-//import java.math.BigDecimal;
 //import java.nio.file.Files;
 //import java.nio.file.Paths;
 //import java.util.List;
-//import java.util.Properties;
 //
 //public class LoginPageStepDef {
 //    private WebDriver driver;

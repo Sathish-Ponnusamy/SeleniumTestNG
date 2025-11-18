@@ -4,8 +4,6 @@ package stepdefs;
 //import com.aventstack.extentreports.ExtentTest;
 //import com.aventstack.extentreports.Status;
 //import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.deque.html.axecore.results.Node;
 import com.deque.html.axecore.results.Results;
 import com.deque.html.axecore.results.Rule;
@@ -19,15 +17,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import opencart.LoginPage;
-import utils.ConfigFileReader;
-import utils.extentReport;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -38,32 +33,19 @@ public class LoginPageStepDef {
     private LoginPage loginPage;
 
     AxeBuilder axeBuilder = new AxeBuilder();
-//    ExtentReports reports = new ExtentReports();
+
+    //    ExtentReports reports = new ExtentReports();
 //
 //    // fluent
 //    ExtentReports extent = new ExtentReports();
 //    ExtentTest test = extent.createTest("MyFirstTest").createNode("Node").pass("Pass");
 //    ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
 
-    ConfigFileReader cfr = new ConfigFileReader();
-    final File CONF = new File(cfr.getReportConfigPath());
-    ExtentSparkReporter spark = new ExtentSparkReporter(cfr.getReportOutPath());
-//    spark.loadXMLConfig(CONF);
-    ExtentReports extent1 = new ExtentReports();
-//    String testName="SeleniumTest";
-//    String testValue="SeleniumTestValue";
-//    extentReport er = new extentReport();
-
-
-    public LoginPageStepDef() throws IOException {
-    }
-
     @Before
-    public void setup() throws IOException {
+    public void setup(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
         driver = new ChromeDriver(options);
-
     }
 
     @After
@@ -75,12 +57,9 @@ public class LoginPageStepDef {
 
 
     @Given("I am on the OpenCart Login page")
-    public void i_am_on_the_open_cart_login_page() throws InterruptedException, IOException {
+    public void i_am_on_the_open_cart_login_page() throws InterruptedException {
         driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
         loginPage = new LoginPage(driver);
-        extentReport er = new extentReport();
-        er.extRepInst(spark, extent1, "Testing - Sample","testValue");
-        er.extRepTer(spark, extent1);
     }
 
     @Given("I have entered a valid username and password")
@@ -89,7 +68,6 @@ public class LoginPageStepDef {
         // Accessibility testing using AXE Libraries
 
         Results axeResults = axeBuilder.analyze(driver);
-
         List<Rule> violations = axeResults.getViolations();
 //        System.out.println("getErrorMessage:" +axeResults.getErrorMessage());
 //        System.out.println("getViolations: " +axeResults.getViolations());
@@ -187,9 +165,6 @@ public class LoginPageStepDef {
             String prettyJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonArray);
             Files.write(Paths.get("target/axe-report.json"), prettyJson.getBytes());
 
-        extentReport er = new extentReport();
-//        er.extRepInst(spark, extent1, "Accessibility Testing",prettyJson);
-//        er.extRepTer(spark, extent1);
             System.out.println("axe-report.json file generated successfully!");
 
         loginPage.enterEmail("Test@email.com");
@@ -197,30 +172,19 @@ public class LoginPageStepDef {
     }
 
     @When("I click on the login button")
-    public void i_click_on_the_login_button() throws IOException {
+    public void i_click_on_the_login_button(){
         loginPage.clickLoginButton();
-//        extentReport er = new extentReport();
-//        er.extRepInst(spark, extent1, "LoginButton","Works!");
-//        er.extRepTer(spark, extent1);
-
     }
 
     @Then ("I should be able to login successfully")
-    public void i_should_be_able_to_login_successfully() throws IOException {
+    public void i_should_be_able_to_login_successfully(){
         Assert.assertEquals(loginPage.checkLogoutLink(),true);
-//        extentReport er = new extentReport();
-//        er.extRepInst(spark, extent1, "LoginSuccessful","Assertion Works!");
-//        er.extRepTer(spark, extent1);
-
     }
 
     @Given ("I have entered invalid {string} and {string}")
-    public void i_have_entered_invalid_username_and_password(String username, String password) throws IOException {
+    public void i_have_entered_invalid_username_and_password(String username, String password) {
         loginPage.enterEmail(username);
         loginPage.enterPassword(password);
-//        extentReport er = new extentReport();
-//        er.extRepInst(spark, extent1, "Authentication","Credential Works!");
-
     }
 
     @Then("I should see an error message indicating {string}")
