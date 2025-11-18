@@ -64,3 +64,15 @@ jobs:
         path: target/cucumber-reports/ # Assuming the reports are in this directory
         retention-days: 7
       if: always()
+
+    # ⬇️ Upload SureFire Report (Cleaned up the path and logic)
+    - name: Upload SureFire Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: surefire-report
+        # Using a relative path is safer in GitHub Actions
+        path: 
+          target/surefire-reports/**/*
+          target/surefire-reports/* # Assuming the reports are in this directory
+        retention-days: 7
+      if: always()      
