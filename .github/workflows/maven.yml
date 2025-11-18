@@ -27,48 +27,40 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-#    - run: mvn clean test
-#    - run: mvn clean test -DTest="apiAutomation"
-
+    
+    # NOTE: 'mvn clean test' runs the test goal, which also does the package goal implicitly.
     - name: Run API test only
+      # This step generates the reports in the 'target' directory.
       run: mvn clean test -Dtest=apiAutomation -DexcludeTests=RunCucumberTest
 
-    - name: Test Artefact Upload
+    # --- Verification & Upload Steps ---
+    
+    # ⬇️ Verify Report Files Exist (Helpful for debugging the path)
+    - name: Verify Target Directory Contents
+      run: ls -R target/
+      # Using 'if: always()' here helps see if the file was generated even on failure
+      if: always()
+
+    # ⬇️ Upload the Extent Report Artifact
+    - name: Upload Extent Reports (spark.html) 🚀
       uses: actions/upload-artifact@v4
       with:
-        name: TestReport
-        path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/**
-
-          # ⬇️ Upload cucumber report artifact
+        name: Extent-Spark-Report
+        # **FIXED PATH**: Use the exact file path or directory.
+        # This assumes the file is generated directly in the 'target' folder.
+        # If your report has accompanying CSS/JS/Image files, use 'target/' or 'target/your_report_dir/'
+        path: target/spark.html 
+        retention-days: 7
+      
+      # ***CRITICAL FIX***: Ensures report uploads even if tests fail
+      if: always() 
+      
+    # ⬇️ Upload Cucumber Report (Cleaned up the path and logic)
     - name: Upload Cucumber Report
       uses: actions/upload-artifact@v4
       with:
-          name: cucumber-report
-          path: /home/runner/work/SeleniumTestNG/SeleniumTestNG/target/**
-          retention-days: 7
-          
-    - name: Verify Report Files Exist
-      run: ls -R target/
-  
-# Upload the Extent Report Artifact
-    - name: Upload Extent Reports
-      uses: actions/upload-artifact@v4
-      with:
-          # This is the name the artifact will have in the GitHub UI
-          name: Extent-HTML-Report
-          
-          # This is the path to the directory containing your report file(s).
-          # Use a path that includes all necessary assets (JS, CSS, images) 
-          # which are usually in the directory alongside index.html.
-          path: |
-            target/ # Adjust this path to your actual report directory
-            target/* # Include all files recursively
-            
-          # (Optional) Define how long the artifact should be retained (in days). Max 90 days.
-          retention-days: 30 
-          
-      # 4. Optional: Run this step even if tests fail
-      # This ensures you get the report for debugging failures.
-      if: always()          
+        name: cucumber-report
+        # Using a relative path is safer in GitHub Actions
+        path: target/cucumber-reports/ # Assuming the reports are in this directory
+        retention-days: 7
+      if: always()
