@@ -2,6 +2,11 @@
 <suite name="Selenium TestNG"
     parallel="tests"
     thread-count="4">
+
+    <listeners>
+        <listener class-name="runner.TestRunner"/>
+    </listeners>
+
     <!-- ===========================
          TEST 1: Run on Chrome
          =========================== -->
