@@ -59,8 +59,8 @@ jobs:
           # Use a path that includes all necessary assets (JS, CSS, images) 
           # which are usually in the directory alongside index.html.
           path: |
-            target/ExtentReports/ # Adjust this path to your actual report directory
-            target/ExtentReports/**/* # Include all files recursively
+            target/ # Adjust this path to your actual report directory
+            target/**/* # Include all files recursively
             
           # (Optional) Define how long the artifact should be retained (in days). Max 90 days.
           retention-days: 30 
