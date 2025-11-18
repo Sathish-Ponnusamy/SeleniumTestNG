@@ -1,9 +1,5 @@
 package utils;
 
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.util.HashMap;
-
 public class BSDeviceCapabilities {
 
 //    public void iphone15ProMaxDevice(){
