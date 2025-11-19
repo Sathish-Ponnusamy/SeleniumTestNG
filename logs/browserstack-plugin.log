@@ -251,3 +251,7 @@
 19:47:50.637 [ApplicationImpl pooled thread 38] INFO  com.browserstack.sdk.utils.Helpers - false
 20:40:29.719 [ApplicationImpl pooled thread 86] INFO  c.b.s.l.BrowserStackRunExtension - testng
 20:40:29.719 [ApplicationImpl pooled thread 86] INFO  com.browserstack.sdk.utils.Helpers - false
+09:21:11.242 [AWT-EventQueue-0] INFO  c.b.sdk.actions.DisableBrowserStack - Setting disable browserstack run update
+09:21:11.254 [AWT-EventQueue-0] INFO  c.b.sdk.actions.EnableBrowserStack - Setting enable browserstack run update
+09:21:11.738 [AWT-EventQueue-0] INFO  c.b.sdk.actions.DisableBrowserStack - Setting disable browserstack run update
+09:21:11.744 [AWT-EventQueue-0] INFO  c.b.sdk.actions.EnableBrowserStack - Setting enable browserstack run update
