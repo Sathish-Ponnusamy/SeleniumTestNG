@@ -108,6 +108,20 @@
             <version>4.11.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/au.com.dius.pact/consumer -->
+        <dependency>
+            <groupId>au.com.dius.pact</groupId>
+            <artifactId>consumer</artifactId>
+            <version>4.6.18</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/au.com.dius.pact/provider -->
+        <dependency>
+            <groupId>au.com.dius.pact</groupId>
+            <artifactId>provider</artifactId>
+            <version>4.6.18</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

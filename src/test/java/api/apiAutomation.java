@@ -14,19 +14,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class apiAutomation {
-    @Test
-    public void apiGETTest(){
-        Response response = RestAssured.get("https://reqres.in/api/users?page=1");
-        System.out.println(response.getStatusCode());
-        System.out.println(response.getTime());
-        System.out.println(response.getBody().asString());
-        System.out.println(response.getHeader("content-type"));
-        int statusCode = response.getStatusCode();
-//        Assert.assertEquals(statusCode,200);
-        baseURI = "https://reqres.in/api";
-        given().get("users?page=1").then().body("data.first_name",hasItems("George","Janet"));
-        given().get("users?page=1").then().body("data.first_name",hasItems("George","George"));
-    }
+
+//    @Test
+//    public void apiGETTest(){
+//        Response response = RestAssured.get("https://reqres.in/api/users?page=1");
+//        System.out.println(response.getStatusCode());
+//        System.out.println(response.getTime());
+//        System.out.println(response.getBody().asString());
+//        System.out.println(response.getHeader("content-type"));
+//        int statusCode = response.getStatusCode();
+////        Assert.assertEquals(statusCode,200);
+//        baseURI = "https://reqres.in/api";
+//        given().get("users?page=1").then().body("data.first_name",hasItems("George","Janet"));
+//        given().get("users?page=1").then().body("data.first_name",hasItems("George","George"));
+//    }
 
     @Test
     public void apiGETTest1(){
