@@ -14,12 +14,13 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:test-on-grid:
+jobs:
+  test-on-grid:
   runs-on: ubuntu-latest
 
   # Define the Docker Service (The Standalone Grid)
   services:
-    selenium-chrome:
+   selenium-chrome:
       image: selenium/standalone-chrome:latest
       ports:
         - 4444:4444
