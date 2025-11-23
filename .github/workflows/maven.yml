@@ -16,69 +16,53 @@ on:
 
 jobs:
   test-on-grid:
-    runs-on: ubuntu-latest
-    
-    # ✅ FIX: 'services' must be a child of 'test-on-grid'
-    services:
-      selenium-chrome:
-        image: selenium/standalone-chrome:latest
-        ports:
-          - 4444:4444
-        #options: --shm-size 2g # Allocate 2GB of shared memory for the browser
+  runs-on: ubuntu-latest
 
-    # Define the Chrome Node and link it to the hub
-      selenium-chrome-node:
-        image: selenium/node-chrome:latest
-         environment:
-          # This variable tells the node where the hub is located.
-          # The service name "selenium-hub" is the internal hostname.
-          SE_EVENT_BUS_HOST: selenium-hub
-          SE_EVENT_BUS_PUBLISH_PORT: 4442
-          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
-        options: --shm-size 2g # Crucial for the browser node
-        depends-on:
-          - selenium-hub # Ensure the hub starts first
+  # Define the Docker Service (The Standalone Grid)
+  services:
+   selenium-chrome:
+      image: selenium/standalone-chrome:latest
+      ports:
+        - 4444:4444
+      options: --shm-size 2g # Allocate 2GB of shared memory for the browser
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
-      - name: Set up Java JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: 'maven'
+    - name: Set up Java JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
 
-      - name: Wait for Selenium Grid to be available (Robust Check)
-        run: |
-          echo "Pinging Selenium Grid container..."
-          for i in $(seq 1 30); do
-            # Use curl with a silent output, writing HTTP status code to /dev/stderr
-            # We check the JSON response for "ready": true
-            if curl -s -X GET "http://selenium-chrome:4444/wd/hub/status" | grep -q '"ready": true'; then
-              echo "✅ Selenium Grid is ready after $i attempts!"
-              break
-            fi
-            echo "Waiting for Grid Hub... attempt $i"
-            sleep 2 # Wait for 2 seconds (up to 60 seconds total)
-            if [ $i -eq 30 ]; then
-                echo "🚨 Error: Selenium Grid did not become ready within 60 seconds."
-                exit 1 # Fail the job explicitly
-            fi
-          done
+    # Wait for the Selenium Grid service to be ready
+    - name: Wait for Selenium Grid to be available
+      run: |
+        # The Grid is accessible via the service name 'selenium-chrome' on port 4444
+        for i in $(seq 1 20); do
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://selenium-chrome:4444/wd/hub/status)
+          if [ "$STATUS" == "200" ]; then
+            echo "✅ Selenium Grid is ready!"
+            break
+          fi
+          echo "Waiting for Selenium Grid (Status: $STATUS)... attempt $i"
+          sleep 3
+        done
 
-      - name: Run Tests on Docker Grid
-        run: |
-          mvn clean test -Dselenium.grid.url=http://selenium-chrome:4444/wd/hub
+    - name: Run Tests on Docker Grid
+      run: |
+        # Pass the Grid URL as a system property to the Maven command
+        mvn clean test -Dselenium.grid.url=http://selenium-chrome:4444/wd/hub
 
-      - name: Upload Test Report Artifacts
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: TestNG-Reports
-          path: target/surefire-reports
-          retention-days: 7
+    - name: Upload Test Report Artifacts
+      uses: actions/upload-artifact@v4
+      if: always() # Run this even if the tests fail
+      with:
+        name: TestNG-Reports
+        path: target/surefire-reports
+        retention-days: 7
 
   build:
 
