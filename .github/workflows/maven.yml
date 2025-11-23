@@ -14,7 +14,55 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
+jobs:test-on-grid:
+  runs-on: ubuntu-latest
+
+  # Define the Docker Service (The Standalone Grid)
+  services:
+    selenium-chrome:
+      image: selenium/standalone-chrome:latest
+      ports:
+        - 4444:4444
+      options: --shm-size 2g # Allocate 2GB of shared memory for the browser
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Java JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    # Wait for the Selenium Grid service to be ready
+    - name: Wait for Selenium Grid to be available
+      run: |
+        # The Grid is accessible via the service name 'selenium-chrome' on port 4444
+        for i in $(seq 1 20); do
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://selenium-chrome:4444/wd/hub/status)
+          if [ "$STATUS" == "200" ]; then
+            echo "✅ Selenium Grid is ready!"
+            break
+          fi
+          echo "Waiting for Selenium Grid (Status: $STATUS)... attempt $i"
+          sleep 3
+        done
+
+    - name: Run Tests on Docker Grid
+      run: |
+        # Pass the Grid URL as a system property to the Maven command
+        mvn clean test -Dselenium.grid.url=http://selenium-chrome:4444/wd/hub
+
+    - name: Upload Test Report Artifacts
+      uses: actions/upload-artifact@v4
+      if: always() # Run this even if the tests fail
+      with:
+        name: TestNG-Reports
+        path: target/surefire-reports
+        retention-days: 7
+
   build:
 
     runs-on: ubuntu-latest
