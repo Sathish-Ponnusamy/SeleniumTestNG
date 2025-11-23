@@ -16,7 +16,7 @@ on:
 
 jobs:
   test-on-grid:
-  runs-on: ubuntu-latest
+   runs-on: ubuntu-latest
 
   # Define the Docker Service (The Standalone Grid)
   services:
