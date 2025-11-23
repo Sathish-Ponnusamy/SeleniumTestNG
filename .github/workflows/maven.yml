@@ -24,7 +24,20 @@ jobs:
         image: selenium/standalone-chrome:latest
         ports:
           - 4444:4444
-        options: --shm-size 2g # Allocate 2GB of shared memory for the browser
+        #options: --shm-size 2g # Allocate 2GB of shared memory for the browser
+
+    # Define the Chrome Node and link it to the hub
+      selenium-chrome-node:
+        image: selenium/node-chrome:latest
+         environment:
+          # This variable tells the node where the hub is located.
+          # The service name "selenium-hub" is the internal hostname.
+          SE_EVENT_BUS_HOST: selenium-hub
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+        options: --shm-size 2g # Crucial for the browser node
+        depends-on:
+          - selenium-hub # Ensure the hub starts first
 
     steps:
       - name: Checkout Code
