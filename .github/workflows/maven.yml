@@ -37,17 +37,22 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      # Wait for the Selenium Grid service to be ready
-      - name: Wait for Selenium Grid to be available
+      - name: Wait for Selenium Grid to be available (Robust Check)
         run: |
-          for i in $(seq 1 20); do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://selenium-chrome:4444/wd/hub/status)
-            if [ "$STATUS" == "200" ]; then
-              echo "✅ Selenium Grid is ready!"
+          echo "Pinging Selenium Grid container..."
+          for i in $(seq 1 30); do
+            # Use curl with a silent output, writing HTTP status code to /dev/stderr
+            # We check the JSON response for "ready": true
+            if curl -s -X GET "http://selenium-chrome:4444/wd/hub/status" | grep -q '"ready": true'; then
+              echo "✅ Selenium Grid is ready after $i attempts!"
               break
             fi
-            echo "Waiting for Selenium Grid (Status: $STATUS)... attempt $i"
-            sleep 3
+            echo "Waiting for Grid Hub... attempt $i"
+            sleep 2 # Wait for 2 seconds (up to 60 seconds total)
+            if [ $i -eq 30 ]; then
+                echo "🚨 Error: Selenium Grid did not become ready within 60 seconds."
+                exit 1 # Fail the job explicitly
+            fi
           done
 
       - name: Run Tests on Docker Grid
