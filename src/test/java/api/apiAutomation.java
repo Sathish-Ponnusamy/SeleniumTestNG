@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.RetryAnalyzer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class apiAutomation {
     given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().body("data[1].id",equalTo(2)).log().all();
     }
 
-    @Test
+    @Test(retryAnalyzer =RetryAnalyzer.class)
     public void apiGETTest2(){
         RestAssured.baseURI= "https://api.reverb.com";
         Map<String, String> map = new HashMap<String, String>();
