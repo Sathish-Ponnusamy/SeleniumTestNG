@@ -18,7 +18,7 @@ public class FFDemo {
 
     public static WebDriver driver;
     @Parameters({"os","Linux"})
-    @Test
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void TestApp() throws MalformedURLException, InterruptedException {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setPlatform(Platform.LINUX);

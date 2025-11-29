@@ -30,7 +30,7 @@ public class apiAutomation {
 //        given().get("users?page=1").then().body("data.first_name",hasItems("George","George"));
 //    }
 
-    @Test
+    @Test(retryAnalyzer =RetryAnalyzer.class)
     public void apiGETTest1(){
         baseURI= "https://reqres.in/api";
     given().headers("x-api-key","reqres-free-v1").get("/users?page=1").then().body("data[1].id",equalTo(2)).log().all();
@@ -56,7 +56,7 @@ public class apiAutomation {
         System.out.println(res.prettyPrint());
     }
 
-    @Test
+    @Test(retryAnalyzer =RetryAnalyzer.class)
     public void apiPOSTTest(){
 
         Map<String,Object> map = new HashMap<String,Object>();

@@ -3,15 +3,15 @@
     parallel="tests"
     thread-count="4">
 
-    <listeners>
-        <listener class-name="runner.TestRunner"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="runner.TestRunner"/>-->
+<!--    </listeners>-->
 
     <!-- ===========================
          TEST 1: Run on Chrome
          =========================== -->
     <test name="LoginPage Test">
-<!--        <parameter name="browser" value="chrome"/>-->
+        <parameter name="browser" value="chrome"/>
 <!--        <groups>-->
 <!--            <run>-->
 <!--                <include name="smoke"/>-->
@@ -34,6 +34,7 @@
 <!--            </run>-->
 <!--        </groups>-->
 <!--        <classes>-->
+<!--        </classes></test>-->
 <!--            <class name="tests.TricentisTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->

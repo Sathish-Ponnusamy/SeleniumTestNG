@@ -1,0 +1,11 @@
+<suite name="retryAnalyserTransformer" parallel="tests" thread-count="4">
+    <listeners>
+        <listener class-name="utils.MyTransformer"/>
+    </listeners>
+
+    <test name="retryAnalyzerTransformer">
+        <classes>
+            <class name="retryAnalyser.MyTestsRetryAnalyzerTransformerTests"></class>
+        </classes>
+    </test>
+</suite>
